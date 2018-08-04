@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Serenity</string>
+    <string name="fingerprint_instructions">Place your finger on the sensor to unlock the vault</string>
+    <string name="fingerprint_register_error">No fingerprint configured. Please register at least one fingerprint in your device\'s Settings</string>
+    <string name="clipboard_password_copy">Secret password copied!</string>
+    <string name="clipboard_username_copy">Secret username copied!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="secret_created">Secret created successfully!</string>
+    <string name="secret_deleted">Secret was successfully deleted</string>
+    <string name="test">Success!</string>
+</resources>
