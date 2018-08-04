@@ -8,4 +8,5 @@
     <string name="secret_created">Secret created successfully!</string>
     <string name="secret_deleted">Secret was successfully deleted</string>
     <string name="test">Success!</string>
+    <string name="secret_updated">Secret has been successfully updated!</string>
 </resources>
