@@ -25,10 +25,13 @@ public class SecretController extends Activity {
         dbHelper = new DbHelper(getApplicationContext());
         Intent i = getIntent();
         this.secret = (Secret)i.getSerializableExtra("secret");
-        setTextView(secret.getSecretName(), R.id.secretName);
+        setTextView("Viewing " + secret.getSecretName(), R.id.secretName);
         setTextView(secret.getSecretUserName(), R.id.secretUsername);
         setTextView(secret.getSecretPassword(), R.id.secretPassword);
-        setTextView(secret.getSecretAnswers(), R.id.secretAnswers);
+        if(secret.getSecretAnswers().length() > 0)
+            setTextView(secret.getSecretAnswers(), R.id.secretAnswers);
+        else
+            setTextView("This secret does not have any security questions", R.id.secretAnswers);
     }
 
     public void editSecretClick(View view){

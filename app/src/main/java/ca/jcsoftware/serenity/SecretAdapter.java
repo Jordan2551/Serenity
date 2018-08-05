@@ -24,6 +24,7 @@ public class SecretAdapter extends ArrayAdapter<Secret> {
     private Context context;
     private List<Secret> secretList;
 
+
     public SecretAdapter(@NonNull Context context, ArrayList<Secret>secretList) {
         super(context, 0, secretList);
         this.context = context;
