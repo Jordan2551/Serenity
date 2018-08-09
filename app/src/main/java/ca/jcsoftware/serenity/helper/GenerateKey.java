@@ -4,8 +4,6 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import ca.jcsoftware.serenity.R;
-
 /**
  * @author Crunchify.com
  * Best way to generate very secure random Password automatically
@@ -16,26 +14,22 @@ public class GenerateKey {
 
     // SecureRandom() constructs a secure random number generator (RNG) implementing the default random number algorithm.
     private SecureRandom crunchifyRandomNo = new SecureRandom();
-
     private ArrayList<Object> crunchifyValueObj;
+    public static final int PASSWORD_MIN_LENGTH = 5;
+    public static final int PASSWORD_MAX_LENGTH = 30;
 
     // Just initialize ArrayList crunchifyValueObj and add ASCII Decimal Values
     public GenerateKey() {
 
         crunchifyValueObj = new ArrayList<>();
 
-        // Adding ASCII Decimal value between 33 and 53
-        for (int i = 33; i < 53; i++) {
-            crunchifyValueObj.add((char) i);
-        }
-
         // Adding ASCII Decimal value between 54 and 85
-        for (int i = 54; i < 85; i++) {
+        for (int i = 48; i < 90; i++) {
             crunchifyValueObj.add((char) i);
         }
 
         // Adding ASCII Decimal value between 86 and 128
-        for (int i = 86; i < 127; i++) {
+        for (int i = 97; i < 122; i++) {
             crunchifyValueObj.add((char) i);
         }
         crunchifyValueObj.add((char) 64);

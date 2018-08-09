@@ -9,4 +9,8 @@
     <string name="secret_deleted">Secret was successfully deleted</string>
     <string name="test">Success!</string>
     <string name="secret_updated">Secret has been successfully updated!</string>
+    <string name="instructions">Place your finger on the sensor to unlock the vault</string>
+    <string name="no_fingerprint_available">Your device doesn\'t support fingerprint authentication</string>
+    <string name="enable_fingerprint_permission">Please enable the fingerprint permission</string>
+    <string name="enable_lockscreen_security">Please enable lockscreen security in your device\'s Settings</string>
 </resources>

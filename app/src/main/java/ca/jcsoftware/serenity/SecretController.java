@@ -1,4 +1,4 @@
-package ca.jcsoftware.serenity.controller;
+package ca.jcsoftware.serenity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ca.jcsoftware.serenity.EditSecret;
-import ca.jcsoftware.serenity.R;
 import ca.jcsoftware.serenity.database.DbHelper;
 import ca.jcsoftware.serenity.helper.Helper;
 import ca.jcsoftware.serenity.model.Secret;

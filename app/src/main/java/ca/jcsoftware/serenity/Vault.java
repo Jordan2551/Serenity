@@ -1,4 +1,4 @@
-package ca.jcsoftware.serenity.controller;
+package ca.jcsoftware.serenity;
 
 import android.app.Activity;
 import android.arch.persistence.room.Room;

@@ -1,6 +1,5 @@
 package ca.jcsoftware.serenity;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,12 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.content.ClipboardManager;
-import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.jcsoftware.serenity.controller.SecretController;
 import ca.jcsoftware.serenity.helper.Helper;
 import ca.jcsoftware.serenity.model.Secret;
 

@@ -1,14 +1,9 @@
 package ca.jcsoftware.serenity.helper;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import ca.jcsoftware.serenity.R;
 
 public class Helper {
 

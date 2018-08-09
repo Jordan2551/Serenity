@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ca.jcsoftware.serenity.controller.Vault;
 import ca.jcsoftware.serenity.database.DbHelper;
 import ca.jcsoftware.serenity.helper.GenerateKey;
 import ca.jcsoftware.serenity.model.Secret;
@@ -38,7 +37,24 @@ public class CreateSecret extends Activity {
     }
 
     public void generatePassword(View view){
-        setTextView(passwordGenerator.getSecurePassword(Integer.parseInt(getTextView(R.id.secretLength))), R.id.secretPassword);
+
+        if(getTextView(R.id.secretLength).length() > 0){
+
+            int secretLength = Integer.parseInt(getTextView(R.id.secretLength));
+
+            if(secretLength >= GenerateKey.PASSWORD_MIN_LENGTH && secretLength <= GenerateKey.PASSWORD_MAX_LENGTH){
+                setTextView(passwordGenerator.getSecurePassword(secretLength), R.id.secretPassword);
+            }
+            else{
+                Toast.makeText(this, "Password length must be between " + GenerateKey.PASSWORD_MIN_LENGTH + " and " + GenerateKey.PASSWORD_MAX_LENGTH + " (inclusive)", Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+        else{
+            Toast.makeText(this, "Please choose a password length between " + GenerateKey.PASSWORD_MIN_LENGTH + " and " + GenerateKey.PASSWORD_MAX_LENGTH + " (inclusive)", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     private void setTextView(String text, int id){
