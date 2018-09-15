@@ -6,6 +6,7 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
 import android.widget.Toast;
 
+import ca.jcsoftware.serenity.PrintAuth;
 import ca.jcsoftware.serenity.Vault;
 
 public class PrintHelper extends FingerprintManager.AuthenticationCallback {
@@ -45,12 +46,13 @@ public class PrintHelper extends FingerprintManager.AuthenticationCallback {
     //so to provide the user with as much feedback as possible I’m incorporating this information into my toast//
     public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
         Toast.makeText(context, "Authentication help\n" + helpString, Toast.LENGTH_LONG).show();
-    }@Override
+    }
 
     //onAuthenticationSucceeded is called when a fingerprint has been successfully matched to one of the fingerprints stored on the user’s device//
     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
         Toast.makeText(context, "Welcome to the vault", Toast.LENGTH_LONG).show();
         context.startActivity(new Intent(context, Vault.class));
+//        printAuth.finish();//Kill the print auth activity from the stack so that the user can't go back.
     }
 
 

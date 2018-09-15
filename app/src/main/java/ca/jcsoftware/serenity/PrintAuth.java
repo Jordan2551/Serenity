@@ -149,22 +149,28 @@ public class PrintAuth extends Activity {
             throw new RuntimeException("Failed to get Cipher", e);
         }
 
-        try {
-            keyStore.load(null);
-            SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME,
-                    null);
-            cipher.init(Cipher.ENCRYPT_MODE, key);
-            //Return true if the cipher has been initialized successfully//
-            return true;
-        } catch (KeyPermanentlyInvalidatedException e) {
+        if (keyStore != null) {
+            try {
+                keyStore.load(null);
+                SecretKey key = (SecretKey) keyStore.getKey(KEY_NAME,
+                        null);
+                cipher.init(Cipher.ENCRYPT_MODE, key);
+                //Return true if the cipher has been initialized successfully//
+                return true;
+            } catch (KeyPermanentlyInvalidatedException e) {
 
-            //Return false if cipher initialization failed//
-            return false;
-        } catch (KeyStoreException | CertificateException
-                | UnrecoverableKeyException | IOException
-                | NoSuchAlgorithmException | InvalidKeyException e) {
-            throw new RuntimeException("Failed to init Cipher", e);
+                //Return false if cipher initialization failed//
+                return false;
+            } catch (KeyStoreException | CertificateException
+                    | UnrecoverableKeyException | IOException
+                    | NoSuchAlgorithmException | InvalidKeyException e) {
+                throw new RuntimeException("Failed to init Cipher", e);
+            }
         }
+        else{
+            Toast.makeText(getApplicationContext(), "You must register at least one finger print in your phone to use Serenity.", Toast.LENGTH_LONG).show();
+        }
+        return false;
     }
 
     private class FingerprintException extends Exception {
@@ -175,7 +181,7 @@ public class PrintAuth extends Activity {
 
     public void aboutClick(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Serenity v1.0 Developed by JC Software.");
+        builder.setMessage("Serenity v1.2 Developed by JC Software.");
         builder.show();
     }
 
